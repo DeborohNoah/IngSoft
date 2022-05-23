@@ -1,0 +1,11 @@
+1) Problema nutrienti specifici, l'elenco dei vari nutrienti non è emerso dalla raccolta dei requisiti ma dalle domande che abbiamo fatto al cliente, avrebbe senso toglierli dal vocabolario e dal modello del dominio, rappresentandoli come mappa cosi da permettere l'aggiunta di altri nutrienti dei quali non eravamo a conoscenza?
+2) Ha senso fare la tabella ruolo/informazione considerando che stiamo lavorando su un sistema con un solo ruolo?
+3) Dobbiamo inserire nel diagramma delle classi le interfacce nuove che abbiamo inserito?
+4) Metodi pubblici interfacce: firma o no? Da dove prendere gli argomenti e chiarezza per l'implementazione.
+5) Stesso termine per diverso scope e diversa funzionalità, dovremmo cambiarli? I due elementi interagiscono
+6) Come passare gli oggetti al controller? per d.i.p. vorremmo rendere le interfacce independenti dal model ma le firme dei metodi diventano molto più lunghe, come fare?!?!?!
+7) Come gestire il controllo delle credenziali durante il login dato che abbiamo una applicazione non distribuita?
+8) Parlare del dubbio sullo sdoppiamento delle view (dettaglio inserimento)
+9) Dobbiamo applicare un simil pattern broker? 
+10) specificare guardia su scelta dell'utente per combined fragment alt?
+11) nei diagrammi di interazione di dettaglio le frecce devono partire dalle view o dal nutrizionista?
