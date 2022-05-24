@@ -1,6 +1,7 @@
 package code.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Paziente {
     
@@ -10,26 +11,25 @@ public class Paziente {
     LocalDate dataNascita;
     String telefono;
     String mail;
+    Storico storico;
 
+    public Paziente(){
 
-    public Paziente() {
     }
 
-    public Paziente(String nome, String cognome, LocalDate dataNascita, String telefono, String mail) {
+
+    public Paziente(String nome, String cognome, LocalDate dataNascita, String telefono, String mail, List<Scheda> storico) {
         this.pazienteId = 1;
         this.nome = nome;
         this.cognome = cognome;
         this.dataNascita = dataNascita;
         this.telefono = telefono;
         this.mail = mail;
+        this.storico = new Storico(storico);
     }
 
     public int getPazienteId() {
         return this.pazienteId;
-    }
-
-    public void setPazienteId(int pazienteId) {
-        this.pazienteId = pazienteId;
     }
 
     public String getNome() {
@@ -71,38 +71,10 @@ public class Paziente {
     public void setMail(String mail) {
         this.mail = mail;
     }
-
-    public Paziente pazienteId(int pazienteId) {
-        setPazienteId(pazienteId);
-        return this;
-    }
-
-    public Paziente nome(String nome) {
-        setNome(nome);
-        return this;
-    }
-
-    public Paziente cognome(String cognome) {
-        setCognome(cognome);
-        return this;
-    }
-
-    public Paziente dataNascita(LocalDate dataNascita) {
-        setDataNascita(dataNascita);
-        return this;
-    }
-
-    public Paziente telefono(String telefono) {
-        setTelefono(telefono);
-        return this;
-    }
-
-    public Paziente mail(String mail) {
-        setMail(mail);
-        return this;
-    }
-
    
+    public Storico getStorico(){
+        return this.storico;
+    }
 
     @Override
     public String toString() {
