@@ -1,5 +1,7 @@
 package code.test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,5 +51,9 @@ public class TestPazienteDb {
         PazientiController controller= new PazientiController();
         String nome="Mario";
         List<Paziente> pazienti=controller.getPazienti(nome);
+        Paziente p=controller.getPaziente(pazienti.get(0).getPazienteId());
+        assertEquals(p.getNome(), nome);
     }
+
+    
 }
