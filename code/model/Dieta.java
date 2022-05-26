@@ -1,13 +1,13 @@
 package code.model;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class Dieta {
     
-    int dietaId;
-    String descrizione;
-    List<Pasto> pasti;
+    private int dietaId;
+    private String descrizione;
+    private List<Pasto> pasti;
+    
     public Dieta(){
 
     }

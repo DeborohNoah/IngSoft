@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import code.model.Alimento;
 import code.model.Paziente;
 import code.model.Scheda;
 
@@ -55,5 +56,15 @@ public class DataBaseMock {
 
     public List<Scheda> getSchede(int pazienteId){
         return new ArrayList<Scheda>();
+    }
+
+    public void addAlimento(Alimento alimento){
+        return;
+    }
+    public void deleteAlimento(Alimento alimento){
+        return;
+    }
+    public void updateAlimento(Alimento alimento){
+        return; 
     }
 }

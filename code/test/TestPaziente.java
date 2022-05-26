@@ -93,7 +93,8 @@ public class TestPaziente{
             float plicaQuadricipiatale=20;
 
             Scheda secondaScheda = new Scheda(1, peso, circonferenzaVita, circonferenzaFianchi, plicaTricipitale, 
-                                                plicaSottoscapolare, plicaSovrailliaca, plicaAddominale, plicaBicipitale, plicaQuadricipiatale);
+                                                plicaSottoscapolare, plicaSovrailliaca, plicaAddominale, plicaBicipitale, 
+                                                plicaQuadricipiatale, new HashMap<String, Path>(), new Dieta());
             
             paziente.getStorico().aggiungiScheda(secondaScheda);
             Scheda scheda2 = paziente.getStorico().getScheda(1);

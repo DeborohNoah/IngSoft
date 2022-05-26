@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Storico {
     
-    List<Scheda> storico;
+    private List<Scheda> storico;
 
     public Storico(List<Scheda> storico) {
         this.storico.addAll(storico);

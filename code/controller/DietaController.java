@@ -1,5 +1,5 @@
 package code.controller;
 
-public class Dieta {
+public class DietaController {
 
 }

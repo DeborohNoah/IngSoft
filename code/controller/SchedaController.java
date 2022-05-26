@@ -1,11 +1,11 @@
 package code.controller;
 
-import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import code.model.Dieta;
 import code.model.Scheda;
 
 public class SchedaController {
@@ -21,7 +21,7 @@ public class SchedaController {
     public boolean addScheda(int pazienteId, Map<String,Float> mapmisure, Map<String, Path> datiClinici, Dieta dieta){
         return true;
     }
-    public boolean updateScheda(int schedaId, int pazienteId, Map<String,Float> misure, Map<File, String> datiClinici){
+    public boolean updateScheda(int schedaId, int pazienteId, Map<String,Float> misure, Map<String, Path> datiClinici, Dieta dieta){
         return true;
     }
     public boolean deleteScheda(int schedaId){

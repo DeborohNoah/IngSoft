@@ -1,9 +1,9 @@
 package code.model;
 
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.Map;
 
-import code.controller.DietaController;
 
 public class Scheda {
     
@@ -18,7 +18,7 @@ public class Scheda {
     private float plicaBicipitale;
     private float plicaQuadricipiatale;
     Map<String, Path> datiClinici;
-    DietaController dieta;
+    Dieta dieta;
 
 
     public Scheda() {
@@ -40,6 +40,26 @@ public class Scheda {
         this.datiClinici = datiClinici;
     }
 
+    public Map<String, Float> getMisure(){
+        HashMap<String, Float> misure = new HashMap<String, Float>();
+        misure.put("circonferenzaVita", circonferenzaVita);
+        misure.put("circonferenzaFianchi", circonferenzaFianchi);
+        misure.put("plicaTricipitale", plicaTricipitale);
+        misure.put("peso", peso);
+        misure.put("plicaSottoscapolare", plicaSottoscapolare);
+        misure.put("plicaSovrailliaca", plicaSovrailliaca);
+        misure.put("plicaAddominale", plicaAddominale);
+        misure.put("plicaBicipitale", plicaBicipitale);
+        misure.put("plicaQuadricipiatale", plicaQuadricipiatale);
+        return misure;
+    }
+
+    public Map<String, Path> getDatiClinici(){
+        return datiClinici;
+    }
+    public Dieta getDieta(){
+        return this.dieta;
+    }
     public int getSchedaId(){
         return schedaId;
     }

@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import code.controller.PazientiController;
+import code.model.Dieta;
 import code.model.Paziente;
 import code.model.Scheda;
 

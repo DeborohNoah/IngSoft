@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Paziente {
     
-    int pazienteId;
-    String nome;
-    String cognome;
-    LocalDate dataNascita;
-    String telefono;
-    String mail;
-    Storico storico;
+    private int pazienteId;
+    private String nome;
+    private String cognome;
+    private LocalDate dataNascita;
+    private String telefono;
+    private String mail;
+    private Storico storico;
 
     public Paziente(){
 

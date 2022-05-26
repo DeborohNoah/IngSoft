@@ -30,7 +30,6 @@ public class TestSchedaDb {
         String telefono="333 33 33 333";
         String mail= "mario.mario@gmail.com";
         List<Scheda> storico = new ArrayList<Scheda>();
-
         float peso=70; 
         float circonferenzaVita=102;
         float circonferenzaFianchi=105;
@@ -40,8 +39,10 @@ public class TestSchedaDb {
         float plicaAddominale=9;
         float plicaBicipitale=7;
         float plicaQuadricipiatale=8;
-        Scheda scheda1=new Scheda(0, peso, circonferenzaVita, circonferenzaFianchi, plicaTricipitale, plicaSottoscapolare, 
-                            plicaSovrailliaca, plicaAddominale, plicaBicipitale, plicaQuadricipiatale, new HashMap<String, Path>());
+        Scheda scheda1=new Scheda(0, peso, circonferenzaVita, circonferenzaFianchi,
+                                    plicaTricipitale, plicaSottoscapolare, 
+                                    plicaSovrailliaca, plicaAddominale, plicaBicipitale, 
+                                    plicaQuadricipiatale, new HashMap<String, Path>(), new Dieta());
 
         peso=65; 
         circonferenzaVita=98;
@@ -55,7 +56,6 @@ public class TestSchedaDb {
         Scheda scheda2=new Scheda(1, peso, circonferenzaVita, circonferenzaFianchi, plicaTricipitale, plicaSottoscapolare, 
                             plicaSovrailliaca, plicaAddominale, plicaBicipitale, plicaQuadricipiatale, 
                             new HashMap<String, Path>(), new Dieta());
-      
         storico.add(scheda1);
         storico.add(scheda2);
         Paziente paziente=new Paziente(pazienteId, nome, cognome, dataNascita, telefono, mail, storico);
@@ -93,21 +93,23 @@ public class TestSchedaDb {
         misure.put("plicaAddominale", plicaAddominale);
         misure.put("plicaBicipitale", plicaBicipitale);
         misure.put("plicaQuadricipiatale", plicaQuadricipiatale);
-        
         HashMap<String, Path> datiClinici = new HashMap<String, Path>();
         datiClinici.put("analisiDelSangue",Path.of("dummy.txt"));
-        
+        Dieta dieta = new Dieta();
         SchedaController controller= new SchedaController();
-        controller.addScheda(pazienteId, misure, datiClinici, new Dieta());
+        controller.addScheda(pazienteId, misure, datiClinici, dieta);
         Scheda lastScheda=controller.getSchedaCorrente(pazienteId);
         
-        assertEquals(found, true);
+        assertEquals(misure, lastScheda.getMisure());
+        assertEquals(datiClinici, lastScheda.getDatiClinici());
+        assertEquals(dieta, lastScheda.getDieta());
     }
     
     @Test
     public void testModifica(){
+        int pazienteId = 1;
         SchedaController controller= new SchedaController();
-        float peso=70; 
+        float peso=70;
         float circonferenzaVita=102;
         float circonferenzaFianchi=105;
         float plicaTricipitale=4;
@@ -130,33 +132,17 @@ public class TestSchedaDb {
         HashMap<String, Path> datiClinici = new HashMap<String, Path>();
         datiClinici.put("analisi",Path.of("notdummy.txt"));
 
-        Scheda scheda1=new Scheda(2, peso, circonferenzaVita, circonferenzaFianchi, plicaTricipitale, plicaSottoscapolare, 
-                            plicaSovrailliaca, plicaAddominale, plicaBicipitale, plicaQuadricipiatale, datiClinici, new Dieta());
+        Dieta dieta = new Dieta();
+
+        Scheda schedaNew=new Scheda(controller.getSchedaCorrente(pazienteId).getSchedaId(), peso, circonferenzaVita, circonferenzaFianchi, plicaTricipitale, plicaSottoscapolare, 
+                            plicaSovrailliaca, plicaAddominale, plicaBicipitale, plicaQuadricipiatale, datiClinici, dieta);
+        controller.updateScheda(controller.getSchedaCorrente(pazienteId).getSchedaId(), pazienteId, misure, datiClinici, new Dieta());
         
-        controller.addScheda(1, mapmisure, datiClinici)
-        boolean found = false;
-        for(Scheda paz : Schede){
-            if(paz.equals(newGiulio)){
-                found = true;
-            }
-        }
-        assertEquals(found, true);
+        Scheda lastScheda = controller.getSchedaCorrente(pazienteId);
+        assertEquals(controller.getSchedaCorrente(pazienteId),schedaNew.getSchedaId());
+        assertEquals(misure, lastScheda.getMisure());
+        assertEquals(datiClinici, lastScheda.getDatiClinici());
+        assertEquals(dieta, lastScheda.getDieta());
     }
 
-    @Test
-    public void testRimuovi(){
-        SchedeController controller= new SchedeController();
-        String nome = "Giulio";
-        String cognome = "Giuliano";
-        LocalDate dataNascita=LocalDate.of(1969, 4, 20);
-        Scheda giulio = controller.getScheda(nome, cognome, dataNascita);
-        controller.removeScheda(giulio.getSchedaId());
-        boolean found = false;
-        for(Scheda paz : controller.getSchede()){
-            if(paz.equals(giulio)){
-                found = true;
-            }
-        }
-        assertEquals(found, false);
-    }
 }
