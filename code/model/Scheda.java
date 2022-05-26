@@ -1,5 +1,10 @@
 package code.model;
 
+import java.nio.file.Path;
+import java.util.Map;
+
+import code.controller.DietaController;
+
 public class Scheda {
     
     private int schedaId;
@@ -12,12 +17,16 @@ public class Scheda {
     private float plicaAddominale;
     private float plicaBicipitale;
     private float plicaQuadricipiatale;
+    Map<String, Path> datiClinici;
+    DietaController dieta;
 
 
     public Scheda() {
     }
 
-    public Scheda(int schedaId, float peso, float circonferenzaVita, float circonferenzaFianchi, float plicaTricipitale, float plicaSottoscapolare, float plicaSovrailliaca, float plicaAddominale, float plicaBicipitale, float plicaQuadricipiatale) {
+    public Scheda(int schedaId, float peso, float circonferenzaVita, float circonferenzaFianchi, 
+                float plicaTricipitale, float plicaSottoscapolare, float plicaSovrailliaca, float plicaAddominale,
+                float plicaBicipitale, float plicaQuadricipiatale, Map<String, Path> datiClinici, Dieta dieta) {
         this.schedaId = schedaId;
         this.peso = peso;
         this.circonferenzaVita = circonferenzaVita;
@@ -28,6 +37,7 @@ public class Scheda {
         this.plicaAddominale = plicaAddominale;
         this.plicaBicipitale = plicaBicipitale;
         this.plicaQuadricipiatale = plicaQuadricipiatale;
+        this.datiClinici = datiClinici;
     }
 
     public int getSchedaId(){

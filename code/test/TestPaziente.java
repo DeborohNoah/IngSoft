@@ -3,8 +3,10 @@ import code.model.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.*;
@@ -33,11 +35,12 @@ public class TestPaziente{
             float plicaAddominale=9;
             float plicaBicipitale=7;
             float plicaQuadricipiatale=8;
+
             scheda=new Scheda(0, peso, circonferenzaVita, circonferenzaFianchi, plicaTricipitale, plicaSottoscapolare, 
-                                plicaSovrailliaca, plicaAddominale, plicaBicipitale, plicaQuadricipiatale);
+                                plicaSovrailliaca, plicaAddominale, plicaBicipitale, plicaQuadricipiatale, new HashMap<String, Path>(), new Dieta());
           
             storico.add(scheda);
-            paziente=new Paziente(nome, cognome, dataNascita, telefono, mail, storico);
+            paziente=new Paziente(0, nome, cognome, dataNascita, telefono, mail, storico);
 
 
         }
