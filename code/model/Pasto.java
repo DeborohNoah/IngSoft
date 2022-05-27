@@ -8,11 +8,10 @@ public class Pasto {
     private DayOfWeek giorno;
     private Map<Alimento, Integer> alimenti;
 
-
     public Pasto() {
     }
 
-    public Pasto(String nome, DayOfWeek giorno, Map<Alimento,Integer> alimenti) {
+    public Pasto(String nome, DayOfWeek giorno, Map<Alimento, Integer> alimenti) {
         this.nome = nome;
         this.giorno = giorno;
         this.alimenti = alimenti;
@@ -34,11 +33,11 @@ public class Pasto {
         this.giorno = giorno;
     }
 
-    public Map<Alimento,Integer> getAlimenti() {
+    public Map<Alimento, Integer> getAlimenti() {
         return this.alimenti;
     }
 
-    public void setAlimenti(Map<Alimento,Integer> alimenti) {
+    public void setAlimenti(Map<Alimento, Integer> alimenti) {
         this.alimenti = alimenti;
     }
 
@@ -52,7 +51,7 @@ public class Pasto {
         return this;
     }
 
-    public Pasto alimenti(Map<Alimento,Integer> alimenti) {
+    public Pasto alimenti(Map<Alimento, Integer> alimenti) {
         setAlimenti(alimenti);
         return this;
     }
@@ -60,10 +59,10 @@ public class Pasto {
     @Override
     public String toString() {
         return "{" +
-            " nome='" + getNome() + "'" +
-            ", giorno='" + getGiorno() + "'" +
-            ", alimenti='" + getAlimenti() + "'" +
-            "}";
+                " nome='" + getNome() + "'" +
+                ", giorno='" + getGiorno() + "'" +
+                ", alimenti='" + getAlimenti() + "'" +
+                "}";
     }
 
 }

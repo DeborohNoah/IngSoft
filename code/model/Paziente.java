@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Paziente {
-    
+
     private int pazienteId;
     private String nome;
     private String cognome;
@@ -13,12 +13,11 @@ public class Paziente {
     private String mail;
     private Storico storico;
 
-    public Paziente(){
-
+    public Paziente() {
     }
 
-
-    public Paziente(int pazienteId, String nome, String cognome, LocalDate dataNascita, String telefono, String mail, List<Scheda> storico) {
+    public Paziente(int pazienteId, String nome, String cognome, LocalDate dataNascita, String telefono, String mail,
+            List<Scheda> storico) {
         this.pazienteId = 1;
         this.nome = nome;
         this.cognome = cognome;
@@ -71,23 +70,21 @@ public class Paziente {
     public void setMail(String mail) {
         this.mail = mail;
     }
-   
-    public Storico getStorico(){
+
+    public Storico getStorico() {
         return this.storico;
     }
 
     @Override
     public String toString() {
         return "{" +
-            " pazienteId='" + getPazienteId() + "'" +
-            ", nome='" + getNome() + "'" +
-            ", cognome='" + getCognome() + "'" +
-            ", dataNascita='" + getDataNascita() + "'" +
-            ", telefono='" + getTelefono() + "'" +
-            ", mail='" + getMail() + "'" +
-            "}";
+                " pazienteId='" + getPazienteId() + "'" +
+                ", nome='" + getNome() + "'" +
+                ", cognome='" + getCognome() + "'" +
+                ", dataNascita='" + getDataNascita() + "'" +
+                ", telefono='" + getTelefono() + "'" +
+                ", mail='" + getMail() + "'" +
+                "}";
     }
-
-
 
 }
