@@ -4,7 +4,6 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Scheda {
     
     private int schedaId;
