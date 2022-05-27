@@ -15,7 +15,7 @@ public class Scheda {
     private float plicaSovrailliaca;
     private float plicaAddominale;
     private float plicaBicipitale;
-    private float plicaQuadricipiatale;
+    private float plicaQuadricipitale;
     Map<String, Path> datiClinici;
     Dieta dieta;
 
@@ -25,7 +25,7 @@ public class Scheda {
 
     public Scheda(int schedaId, float peso, float circonferenzaVita, float circonferenzaFianchi, 
                 float plicaTricipitale, float plicaSottoscapolare, float plicaSovrailliaca, float plicaAddominale,
-                float plicaBicipitale, float plicaQuadricipiatale, Map<String, Path> datiClinici, Dieta dieta) {
+                float plicaBicipitale, float plicaQuadricipitale, Map<String, Path> datiClinici, Dieta dieta) {
         this.schedaId = schedaId;
         this.peso = peso;
         this.circonferenzaVita = circonferenzaVita;
@@ -35,7 +35,7 @@ public class Scheda {
         this.plicaSovrailliaca = plicaSovrailliaca;
         this.plicaAddominale = plicaAddominale;
         this.plicaBicipitale = plicaBicipitale;
-        this.plicaQuadricipiatale = plicaQuadricipiatale;
+        this.plicaQuadricipitale = plicaQuadricipitale;
         this.datiClinici = datiClinici;
     }
 
@@ -49,7 +49,7 @@ public class Scheda {
         misure.put("plicaSovrailliaca", plicaSovrailliaca);
         misure.put("plicaAddominale", plicaAddominale);
         misure.put("plicaBicipitale", plicaBicipitale);
-        misure.put("plicaQuadricipiatale", plicaQuadricipiatale);
+        misure.put("plicaQuadricipitale", plicaQuadricipitale);
         return misure;
     }
 
@@ -126,12 +126,12 @@ public class Scheda {
         this.plicaBicipitale = plicaBicipitale;
     }
 
-    public float getPlicaQuadricipiatale() {
-        return this.plicaQuadricipiatale;
+    public float getPlicaQuadricipitale() {
+        return this.plicaQuadricipitale;
     }
 
-    public void setPlicaQuadricipiatale(float plicaQuadricipiatale) {
-        this.plicaQuadricipiatale = plicaQuadricipiatale;
+    public void setPlicaQuadricipitale(float plicaQuadricipitale) {
+        this.plicaQuadricipitale = plicaQuadricipitale;
     }
 
     public Scheda peso(float peso) {
@@ -174,8 +174,8 @@ public class Scheda {
         return this;
     }
 
-    public Scheda plicaQuadricipiatale(float plicaQuadricipiatale) {
-        setPlicaQuadricipiatale(plicaQuadricipiatale);
+    public Scheda plicaQuadricipitale(float plicaQuadricipitale) {
+        setPlicaQuadricipitale(plicaQuadricipitale);
         return this;
     }
 
@@ -190,7 +190,7 @@ public class Scheda {
             ", plicaSovrailliaca='" + getPlicaSovrailliaca() + "'" +
             ", plicaAddominale='" + getPlicaAddominale() + "'" +
             ", plicaBicipitale='" + getPlicaBicipitale() + "'" +
-            ", plicaQuadricipiatale='" + getPlicaQuadricipiatale() + "'" +
+            ", plicaQuadricipitale='" + getPlicaQuadricipitale() + "'" +
             "}";
     }
 
