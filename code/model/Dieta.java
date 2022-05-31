@@ -69,6 +69,12 @@ public class Dieta {
         this.soglie.add(s);
     }
 
+
+    public void modificaSoglia(Soglia s){
+        this.soglie.remove(s);
+        this.soglie.add(s);
+    }
+
     public Map<Nutriente, Float> calcolaValoriNutrizionali(){
         Map<Nutriente, Float> res=new HashMap<>();
         for(Pasto p: this.pasti){
