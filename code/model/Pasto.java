@@ -1,6 +1,7 @@
 package code.model;
 
 import java.time.DayOfWeek;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Pasto {
@@ -16,6 +17,12 @@ public class Pasto {
         this.giorno = giorno;
         this.alimenti = alimenti;
     }
+    public Pasto(String nome, DayOfWeek giorno) {
+        this.nome = nome;
+        this.giorno = giorno;
+        this.alimenti = new HashMap<>();
+    }
+
 
     public String getNome() {
         return this.nome;
@@ -41,19 +48,19 @@ public class Pasto {
         this.alimenti = alimenti;
     }
 
-    public Pasto nome(String nome) {
-        setNome(nome);
-        return this;
+    public void aggiungiAlimento(Alimento a, int quantita){
+        this.alimenti.put(a, quantita);
     }
 
-    public Pasto giorno(DayOfWeek giorno) {
-        setGiorno(giorno);
-        return this;
+
+
+    public void modificaAlimento(Alimento a, int quantita){
+        this.alimenti.remove(a);
+        this.alimenti.put(a, quantita);
     }
 
-    public Pasto alimenti(Map<Alimento, Integer> alimenti) {
-        setAlimenti(alimenti);
-        return this;
+    public void rimuoviAlimento(Alimento a){
+        this.alimenti.remove(a);
     }
 
     @Override
