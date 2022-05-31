@@ -15,12 +15,12 @@ public class Storico {
     }
 
     public boolean modificaScheda(Scheda scheda){
-        this.storico.remove(0);
+        this.storico.remove(this.storico.size()-1);
         return this.storico.add(scheda);
     }
 
     public void rimuoviScheda(Scheda scheda){
-        this.storico.remove(0);
+        this.storico.remove(this.storico.size()-1);
     }
     
     public Scheda getScheda(int schedaId){
