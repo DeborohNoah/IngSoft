@@ -1,11 +1,14 @@
 package code.model;
 
 import java.nio.file.Path;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Scheda {
     
+
+    private LocalDate data;
     private int schedaId;
     private float peso; 
     private float circonferenzaVita;
@@ -37,6 +40,7 @@ public class Scheda {
         this.plicaBicipitale = plicaBicipitale;
         this.plicaQuadricipitale = plicaQuadricipitale;
         this.datiClinici = datiClinici;
+        this.data=LocalDate.now();
     }
 
     public Map<String, Float> getMisure(){
@@ -134,51 +138,30 @@ public class Scheda {
         this.plicaQuadricipitale = plicaQuadricipitale;
     }
 
-    public Scheda peso(float peso) {
-        setPeso(peso);
-        return this;
+
+    public LocalDate getData(){
+        return this.data;
     }
 
-    public Scheda circonferenzaVita(float circonferenzaVita) {
-        setCirconferenzaVita(circonferenzaVita);
-        return this;
+    public void aggiungiDatiClinici(String name, Path file){
+        this.datiClinici.put(name, file);
     }
 
-    public Scheda circonferenzaFianchi(float circonferenzaFianchi) {
-        setCirconferenzaFianchi(circonferenzaFianchi);
-        return this;
-    }
 
-    public Scheda plicaTricipitale(float plicaTricipitale) {
-        setPlicaTricipitale(plicaTricipitale);
-        return this;
-    }
+    public void updateScheda( float circonferenzaVita, float circonferenzaFianchi, 
+    float plicaTricipitale, float plicaSottoscapolare, float plicaSovrailliaca, float plicaAddominale,
+    float plicaBicipitale, float plicaQuadricipitale) {
+        this.setPeso(peso);
+        this.setCirconferenzaFianchi(circonferenzaFianchi);
+        this.setCirconferenzaVita(circonferenzaVita);
+        this.setPlicaTricipitale(plicaTricipitale);
+        this.setPlicaSottoscapolare(plicaSottoscapolare);
+        this.setPlicaSovrailliaca(plicaSovrailliaca);
+        this.setPlicaBicipitale(plicaBicipitale);
+        this.setPlicaAddominale(plicaAddominale);
+        this.setPlicaQuadricipitale(plicaQuadricipitale);
 
-    public Scheda plicaSottoscapolare(float plicaSottoscapolare) {
-        setPlicaSottoscapolare(plicaSottoscapolare);
-        return this;
     }
-
-    public Scheda plicaSovrailliaca(float plicaSovrailliaca) {
-        setPlicaSovrailliaca(plicaSovrailliaca);
-        return this;
-    }
-
-    public Scheda plicaAddominale(float plicaAddominale) {
-        setPlicaAddominale(plicaAddominale);
-        return this;
-    }
-
-    public Scheda plicaBicipitale(float plicaBicipitale) {
-        setPlicaBicipitale(plicaBicipitale);
-        return this;
-    }
-
-    public Scheda plicaQuadricipitale(float plicaQuadricipitale) {
-        setPlicaQuadricipitale(plicaQuadricipitale);
-        return this;
-    }
-
     @Override
     public String toString() {
         return "{" +
