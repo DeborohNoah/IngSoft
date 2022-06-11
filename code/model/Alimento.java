@@ -48,4 +48,8 @@ public class Alimento {
             "}";
     }
     
+    public Map<Nutriente,Float> calcolaValoriNutrizionali(Map<Nutriente, Float> grammi) {
+        return this.valoriNutrizionali;
+    }
+
 }
